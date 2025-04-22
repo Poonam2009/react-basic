@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Login from './components/Login/Login'
-import Profile from './components/Profile/Profile'
-import UserContextProvider from './context/UserContextProvider'
+import "./App.css";
+import Login from "./components/Login/Login";
+import Profile from "./components/Profile/Profile";
+import UserContextProvider from "./context/UserContext/UserContextProvider";
+import ThemeToggle from "./components/ThemeToggle";
+import { ThemeProvider } from "./context/ThemeContext/ThemeContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <UserContextProvider>
-      <h1>Context API</h1>
-      <Login />
-      <Profile />
+      <ThemeProvider>
+        <h1>Context API</h1>
+        <Login />
+        <Profile />
+        <ThemeToggle />
+      </ThemeProvider>
     </UserContextProvider>
-  )
+  );
 }
 
-export default App
+export default App;
